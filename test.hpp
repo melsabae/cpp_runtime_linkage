@@ -4,7 +4,7 @@
 namespace test_lib
 {
     // real original my guy
-    void f(void);
+    const char* f(void);
 };
 
 
@@ -12,8 +12,8 @@ extern "C"
 {
     namespace test_lib_extern
     {
-        void g(void);
-        void h(void);
+        const char* g(void);
+        const char* h(void);
     }
 }
 

@@ -29,7 +29,7 @@ int main(int argc, char** argv)
 
     for (const std::string& sym: symbols)
     {
-        std::function <void (void)> f = reinterpret_cast<void(*)(void)>(dlsym(tl, sym.c_str()));
+        std::function <const char* (void)> f = reinterpret_cast<const char*(*)(void)>(dlsym(tl, sym.c_str()));
 
         if (nullptr == f)
         {
@@ -37,8 +37,7 @@ int main(int argc, char** argv)
         }
         else
         {
-            std::cout << "\"" << sym << "\" found" << std::endl;
-            f();
+            std::cout << "\"" << sym << "\" found :\"" << f() << "\"" << std::endl;
         }
     }
 

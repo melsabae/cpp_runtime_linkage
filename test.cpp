@@ -7,24 +7,24 @@
 namespace test_lib
 {
     // real original my guy
-    void f(void)
+    const char* f(void)
     {
-        std::cout << __PRETTY_FUNCTION__ << std::endl;
+        return __PRETTY_FUNCTION__;
     }
 }
 
 
 namespace test_lib_extern
 {
-    void g(void)
+    const char* g(void)
     {
-        std::cout << __PRETTY_FUNCTION__ << std::endl;
+        return __PRETTY_FUNCTION__;
     }
 
-    void h(void)
+    const char* h(void)
     {
         // test if we can indirectly obtain access to non-extern-declared functions
-        test_lib::f();
+        return test_lib::f();
     }
 }
 
