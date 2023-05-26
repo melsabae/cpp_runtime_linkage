@@ -7,5 +7,15 @@ namespace test_lib
     void f(void);
 };
 
+
+extern "C"
+{
+    namespace test_lib_extern
+    {
+        void g(void);
+        void h(void);
+    }
+}
+
 #endif //TEST_HPP
 
